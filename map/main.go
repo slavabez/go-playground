@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 	colours := make(map[string]string)
 
 	colours["white"] = "#ffffff"

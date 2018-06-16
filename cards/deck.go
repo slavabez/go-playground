@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"strings"
-	"os"
 	"math/rand"
+	"os"
+	"strings"
 	"time"
 )
 
