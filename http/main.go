@@ -7,6 +7,8 @@ import (
 	"io"
 )
 
+type customWriter struct {}
+
 func main(){
 	resp, err := http.Get("https://google.com")
 	if err != nil {
@@ -18,6 +20,14 @@ func main(){
 	resp.Body.Read(bs)
 	fmt.Println(string(bs))*/
 
-	io.Copy(os.Stdout, resp.Body)
+	cw := customWriter{}
 
+	io.Copy(cw, resp.Body)
+
+}
+
+func (customWriter) Write(bs []byte) (int, error) {
+	fmt.Println(string(bs))
+	fmt.Println("Just wrote", len(bs), "bytes")
+	return len(bs), nil
 }
