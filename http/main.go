@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
-	"os"
 	"io"
+	"net/http"
+	"os"
 )
 
-type customWriter struct {}
+type customWriter struct{}
 
-func main(){
+func main() {
 	resp, err := http.Get("https://google.com")
 	if err != nil {
 		fmt.Println("Error:", err)

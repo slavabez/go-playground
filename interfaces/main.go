@@ -19,7 +19,7 @@ func main() {
 
 }
 
-func printGreeting(b bot){
+func printGreeting(b bot) {
 	fmt.Println(b.getGreeting())
 }
 
